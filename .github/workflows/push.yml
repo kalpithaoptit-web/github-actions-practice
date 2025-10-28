@@ -1,13 +1,10 @@
-name: My First GitHub Action
+name: Push Workflow
 
-on:
-  push:
-  pull_request:
-  workflow_dispatch:
+on: push
 
 jobs:
-  hello-world:
+  test:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello
-        run: echo "👋 This workflow was triggered by:${{ github.event_name }}"
+      - name: Say Hello
+        run: echo "Push workflow triggered!"
