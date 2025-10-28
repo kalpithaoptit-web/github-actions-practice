@@ -1,9 +1,11 @@
 name: My First GitHub Action
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   hello-world:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "👋 Hello from GitHub Actions!"
+      - run: echo "👋 Triggered by: ${{ github.event_name }}"
